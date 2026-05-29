@@ -1,7 +1,9 @@
 const form = document.querySelector('form');
-const display = document.querySelector('display');
+const display = document.querySelector('.display');
 
-function Calcular (evento){
+function calcularImc (evento) {
+    evento.preventDefault();
+
     const peso = parseFloat(document.getElementById('peso_inp').value);
     const altura = parseFloat(document.getElementById('altura_inp').value);
 
@@ -30,4 +32,4 @@ function Calcular (evento){
     display.innerHTML = `<div><p>Seu IMC é ${imc.toFixed(2)}: ${resultado}</p></div>`;
 }
 
-form.addEventListener('submit', Calcular);
+form.addEventListener('submit', calcularImc);
